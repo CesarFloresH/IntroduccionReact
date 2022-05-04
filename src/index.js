@@ -9,14 +9,6 @@ function Square(props) {
   );
 }  
   class Board extends React.Component {
-    constructor(props){
-      super(props);
-      this.state = {
-        squares: Array(9).fill(null),
-        xIsNext: true,
-      };
-    }
-
     renderSquare(i) {
       return (
         <Square 
@@ -28,7 +20,6 @@ function Square(props) {
     render() {
       return (
         <div>
-          <div className="status">{status}</div>
           <div className="board-row">
             {this.renderSquare(0)}
             {this.renderSquare(1)}
@@ -99,6 +90,7 @@ function Square(props) {
         </div>
       );
     }
+  }
   // ========================================
   const root = ReactDOM.createRoot(document.getElementById("root"));
   root.render(<Game />);
